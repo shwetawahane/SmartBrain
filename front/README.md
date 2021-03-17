@@ -1,3 +1,3 @@
 HOW TO RUN:
-npm install \\
+npm install 
 npm start
