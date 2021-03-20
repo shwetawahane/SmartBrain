@@ -1,0 +1,36 @@
+How to connect to database:
+
+1)Open Command Prompt.
+2)Run this: psql -U postgres
+3)Enter your password. 
+
+How to create database:
+After step3 mentioned above, 
+4)run: CREATE DATABASE smartBrain;
+But for running queries you need to go back to current directory to smartbrain database.
+
+5)run: \c smartbrain
+
+Now you can run queries like: select * from users;
+
+How to create tables into the database
+6)Open pgadmin.
+
+Go to Tools > Query Tools > SQL 
+
+Use this code for creating databases:
+
+CREATE TABLE login(
+	id serial PRIMARY KEY,
+	hash VARCHAR(100) NOT NULL,
+	email text UNIQUE NOT NULL
+	
+);
+
+CREATE TABLE users(
+	id serial PRIMARY KEY,
+	name VARCHAR(100),
+	email text UNIQUE NOT NULL,
+	entries BIGINT DEFAULT 0,
+	joined TIMESTAMP NOT NULL
+);
